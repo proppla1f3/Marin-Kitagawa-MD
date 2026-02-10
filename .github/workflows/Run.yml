@@ -1,4 +1,4 @@
-name: WhatsApp Bot Test
+name: Marin free Deploy 
 
 on:
   push:
@@ -17,6 +17,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm'
+
+      - name: Install FFmpeg
+        uses: FedericoCarboni/setup-ffmpeg@v3
+        with:
+          ffmpeg-version: release
 
       - name: Install Dependencies
         run: npm install
